@@ -1,0 +1,26 @@
+{
+  "name": "editify",
+  "version": "0.0.0",
+  "description": "A pure implementation of WYSIWYG HTML editor all we needed",
+  "repository": "git@github.com:saltyshiomix/editify.git",
+  "author": "Shiono Yoshihide <shiono.yoshihide@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/saltyshiomix/editify",
+  "keywords": [
+    "wysiwyg",
+    "wysiwyg-editor",
+    "wysiwyg-html-editor",
+    "react",
+    "vue"
+  ],
+  "bugs": {
+    "url": "https://github.com/saltyshiomix/editify/issues",
+    "email": "shiono.yoshihide@gmail.com"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
