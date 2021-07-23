@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editify Example</title>
+  <script src="./editify.js"></script>
+  <script>
+    window.onload = function() {
+      const editify = new Editify.Editify('editor');
+
+      editify.on('change', function(html, text) {
+        console.log('change event: new html: ', html);
+        console.log('change event: new text: ', text);
+      });
+
+      editify.on('selectionchange', function(selection) {
+        console.log('selectionchange event: selected text: ', selection.toString());
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="editor">
+    <h1>Hello Editify</h1>
+    <p>Let's edit <b>these</b> lines!</p>
+    <ul>
+      <li>list 1</li>
+      <li>list 2</li>
+    </ul>
+    <ol>
+      <li>number 1</li>
+      <li>number 2</li>
+    </ol>
+    <p>Day by day, <i>in every way</i>, <span style="color: red">we</span> are getting <u>better and better</u>.</p>
+  </div>
+</body>
+</html>
