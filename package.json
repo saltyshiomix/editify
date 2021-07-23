@@ -8,8 +8,11 @@
   "homepage": "https://github.com/saltyshiomix/editify",
   "keywords": [
     "wysiwyg",
+    "editor",
     "wysiwyg-editor",
     "wysiwyg-html-editor",
+    "html-editor",
+    "rich-text-editor",
     "react",
     "vue"
   ],
