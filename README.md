@@ -146,3 +146,7 @@ export default function EditifyPage() {
     - [ ] cmd: shift+tab
 - [ ] toolbar (hovered)
 - [ ] undo / redo
+- [ ] CSS
+  - [ ] default theme
+  - [ ] custom theme
+- [ ] plugins
