@@ -3,8 +3,14 @@
     "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "declarationDir": ".",
+    "emitDeclarationOnly": true
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "index.ts"
   ]

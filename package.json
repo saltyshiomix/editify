@@ -23,10 +23,11 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "index.d.ts",
     "editify.js"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && tsc",
     "prepublishOnly": "NODE_ENV=production npm run build"
   },
   "dependencies": {},
