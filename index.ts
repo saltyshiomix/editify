@@ -66,6 +66,10 @@ export class Editify {
       return;
     }
 
+    if (!onChange) {
+      return;
+    }
+
     const oldCaretPosition = currentCaretPosition;
     const nextCaretPosition = this.getCaretPosition(this.editor);
     const target = e.target as HTMLElement;
@@ -73,9 +77,7 @@ export class Editify {
     const newText = target.textContent?.substring(oldCaretPosition, nextCaretPosition);
     currentCaretPosition = nextCaretPosition;
 
-    if (onChange) {
-      onChange(newHtml, newText);
-    }
+    onChange(newHtml, newText);
   };
 
   private onSelectStart = () => {
