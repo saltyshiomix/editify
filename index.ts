@@ -58,9 +58,9 @@ export class Editify {
     }
   };
 
-  // onKeyDown = (e: KeyboardEvent) => {};
+  // private onKeyDown = (e: KeyboardEvent) => {};
 
-  onKeyUp = (e: KeyboardEvent, onChange: (newHtml?: string, newText?: string) => void) => {
+  private onKeyUp = (e: KeyboardEvent, onChange: (newHtml?: string, newText?: string) => void) => {
     // omit IME events
     if ((e.isComposing || e.keyCode === 229) && !(e.code === 'Enter' && e.keyCode === 229)) {
       return;
@@ -78,11 +78,11 @@ export class Editify {
     }
   };
 
-  onSelectStart = () => {
+  private onSelectStart = () => {
     selectStart = true;
   };
 
-  onMouseUp = (_e: MouseEvent, onSelectionChange: (e: any) => void) => {
+  private onMouseUp = (_e: MouseEvent, onSelectionChange: (e: any) => void) => {
     currentCaretPosition = this.getCaretPosition(this.editor);
 
     if (selectStart) {
