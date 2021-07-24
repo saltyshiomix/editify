@@ -104,5 +104,3 @@ export class Editify {
     return -1;
   };
 }
-
-export default Editify;
