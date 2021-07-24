@@ -1,15 +1,8 @@
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 
-const input = 'index.ts';
-
-const plugins = [
-  typescript(),
-  (process.env.NODE_ENV === 'production' && terser()),
-];
-
 export default {
-  input,
+  input: 'index.ts',
   output: [
     {
       file: 'index.js',
@@ -21,5 +14,8 @@ export default {
       format: 'umd',
     },
   ],
-  plugins,
+  plugins: [
+    typescript(),
+    (process.env.NODE_ENV === 'production' && terser()),
+  ],
 };
