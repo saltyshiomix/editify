@@ -49,6 +49,15 @@ editify.on('selectionchange', function(selection) {
   <script>
     window.onload = function() {
       const editify = new Editify.Editify('editor');
+
+      editify.on('change', function(html, text) {
+        console.log('change event: new html: ', html);
+        console.log('change event: new text: ', text);
+      });
+
+      editify.on('selectionchange', function(selection) {
+        console.log('selectionchange event: selected text: ', selection.toString());
+      });
     }
   </script>
 </head>
@@ -58,3 +67,82 @@ editify.on('selectionchange', function(selection) {
   </div>
 </body>
 ```
+
+## Usage (next.js)
+
+```tsx
+export default function EditifyPage() {
+  const onChange = (html: string, text: string) => {
+    console.log('change event: new html: ', html);
+    console.log('change event: new text: ', text);
+  };
+
+  const onSelectionChange = (selection: Selection) => {
+    console.log('selectionchange event: selected text: ', selection.toString());
+  };
+
+  React.useEffect(() => {
+    // editify can be used only in client side
+    const { Editify } = require("editify");
+
+    const editor = new Editify("editor");
+
+    editor.on("change", onChange);
+    editor.on("selectionchange", onSelectionChange);
+
+    return () => {
+      editor.off("change", onChange);
+      editor.off("selectionchange", onSelectionChange);
+    };
+  }, []);
+
+  return (
+    <div id="editor">
+      <p>This line is editable!</p>
+    </div>
+  );
+}
+```
+
+## Roadmaps
+
+- [x] contenteditable
+- [x] on `change` event
+- [x] on `selectionchange` event
+- [ ] toolbar (fixed)
+  - [ ] inline: bold
+    - [ ] toggle
+  - [ ] inline: italic
+    - [ ] toggle
+  - [ ] inline: color
+    - [ ] toggle
+  - [ ] inline: link
+    - [ ] insert
+    - [ ] edit
+    - [ ] remove
+  - [ ] list
+    - [ ] toggle
+    - [ ] indent: tab
+    - [ ] indent: shift+tab
+  - [ ] image
+    - [ ] insert
+    - [ ] edit
+    - [ ] remove
+  - [ ] PDF
+    - [ ] insert
+    - [ ] edit
+    - [ ] remove
+  - [ ] table
+    - [ ] insert
+      - [ ] 2 * 2 cells
+    - [ ] edit
+      - [ ] cell
+      - [ ] add row
+      - [ ] add column
+      - [ ] remove row
+      - [ ] remove column
+    - [ ] remove
+    - [ ] cmd: tab
+    - [ ] cmd: shift+tab
+- [ ] toolbar (hovered)
+- [ ] undo / redo
