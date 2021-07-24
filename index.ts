@@ -70,11 +70,11 @@ export class Editify {
       return;
     }
 
-    const oldCaretPosition = currentCaretPosition;
+    const lastCaretPosition = currentCaretPosition;
     const nextCaretPosition = this.getCaretPosition(this.editor);
     const target = e.target as HTMLElement;
     const newHtml = target.innerHTML;
-    const newText = target.textContent?.substring(oldCaretPosition, nextCaretPosition);
+    const newText = target.textContent?.substring(lastCaretPosition, nextCaretPosition);
     currentCaretPosition = nextCaretPosition;
 
     onChange(newHtml, newText);
