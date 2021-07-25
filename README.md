@@ -21,6 +21,9 @@ yarn add editify
 ## Usage (commonjs)
 
 ```html
+<div>
+  <button id="toolbar-bold">BOLD</button>
+</div>
 <div id="editor">
   <p>This line is editable!</p>
 </div>
@@ -62,6 +65,9 @@ editify.on('selectionchange', function(selection) {
   </script>
 </head>
 <body>
+  <div>
+    <button id="toolbar-bold">BOLD</button>
+  </div>
   <div id="editor">
     <p>This line is editable!</p>
   </div>
@@ -97,9 +103,14 @@ export default function EditifyPage() {
   }, []);
 
   return (
-    <div id="editor">
-      <p>This line is editable!</p>
-    </div>
+    <React.Fragment>
+      <div>
+        <button id="toolbar-bold">BOLD</button>
+      </div>
+      <div id="editor">
+        <p>This line is editable!</p>
+      </div>
+    </React.Fragment>
   );
 }
 ```
@@ -110,8 +121,8 @@ export default function EditifyPage() {
 - [x] on `change` event
 - [x] on `selectionchange` event
 - [ ] toolbar (fixed)
-  - [ ] inline: bold
-    - [ ] toggle
+  - [x] inline: bold
+    - [x] toggle
   - [ ] inline: italic
     - [ ] toggle
   - [ ] inline: color
