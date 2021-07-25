@@ -1,6 +1,6 @@
 {
   "name": "editify",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A pure implementation of WYSIWYG HTML editor all we needed",
   "repository": "git@github.com:saltyshiomix/editify.git",
   "author": "Shiono Yoshihide <shiono.yoshihide@gmail.com>",
